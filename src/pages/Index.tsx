@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Hero from "@/components/Hero";
 import MenuHighlights from "@/components/MenuHighlights";
 import Reviews from "@/components/Reviews";
@@ -5,15 +6,30 @@ import Hours from "@/components/Hours";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <MenuHighlights />
-      <Reviews />
-      <Hours />
-      <footer className="py-8 px-6 text-center text-muted-foreground text-sm border-t border-border">
-        <p>© {new Date().getFullYear()} El Guy Tacos · Roswell, GA</p>
-      </footer>
-    </main>
+    <>
+      <Head>
+        <title>El Guy Tacos · Roswell, GA</title>
+
+        {/* Disable social image preview */}
+        <meta name="robots" content="noimageindex, noarchive, nofollow" />
+        <meta property="og:image" content="" />
+        <meta name="twitter:card" content="summary" />
+
+        {/* Optional: other Open Graph info */}
+        <meta property="og:title" content="El Guy Tacos · Roswell, GA" />
+        <meta property="og:description" content="Authentic Mexican street food · Prices may vary" />
+      </Head>
+
+      <main className="min-h-screen">
+        <Hero />
+        <MenuHighlights />
+        <Reviews />
+        <Hours />
+        <footer className="py-8 px-6 text-center text-muted-foreground text-sm border-t border-border">
+          <p>© {new Date().getFullYear()} El Guy Tacos · Roswell, GA</p>
+        </footer>
+      </main>
+    </>
   );
 };
 
