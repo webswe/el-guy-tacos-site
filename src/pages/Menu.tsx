@@ -32,7 +32,7 @@ const menu: MenuCategory[] = [
 
       // 🔥 Chalkboard additions
       { name: "Classic Street Tacos", description: "Simple tacos with your choice of meat, onion & cilantro", price: "$3.00" },
-      { name: "Birria Tacos (Chalkboard Special)", description: "Slow-cooked beef tacos served with rich consommé", price: "$15.00", popular: true },
+      { name: "Birria Tacos", description: "Slow-cooked beef tacos served with rich consommé", price: "$15.00", popular: true },
     ],
   },
   {
