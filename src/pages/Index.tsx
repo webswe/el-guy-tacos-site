@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import Hero from "@/components/Hero";
 import MenuHighlights from "@/components/MenuHighlights";
 import Reviews from "@/components/Reviews";
@@ -7,7 +7,7 @@ import Hours from "@/components/Hours";
 const Index = () => {
   return (
     <>
-      <Head>
+      <Helmet>
         <title>El Guy Tacos · Roswell, GA</title>
 
         {/* Disable social image preview */}
@@ -15,10 +15,10 @@ const Index = () => {
         <meta property="og:image" content="" />
         <meta name="twitter:card" content="summary" />
 
-        {/* Optional: other Open Graph info */}
+        {/* Open Graph info */}
         <meta property="og:title" content="El Guy Tacos · Roswell, GA" />
         <meta property="og:description" content="Authentic Mexican street food · Prices may vary" />
-      </Head>
+      </Helmet>
 
       <main className="min-h-screen">
         <Hero />
