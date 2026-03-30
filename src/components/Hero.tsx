@@ -21,8 +21,6 @@ const Hero = () => {
             ★ 4.7
           </span>
           <span className="text-muted-foreground text-sm">47 reviews</span>
-          <span className="text-muted-foreground text-sm">·</span>
-          <span className="text-muted-foreground text-sm">$10–20</span>
         </div>
 
         <h1 className="font-display text-7xl md:text-9xl text-foreground leading-none mb-4">
