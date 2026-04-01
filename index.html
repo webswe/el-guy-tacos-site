@@ -1,25 +1,62 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>El Guy Tacos | Authentic Street Tacos in Roswell, GA</title>
-    <meta name="description" content="Late-night authentic birria tacos & esquites from our trailer in Roswell, GA. Open Tue-Sun, 6 PM to late. Rated 4.7 stars." />
-    <meta name="author" content="El Guy Tacos" />
 
-    <meta property="og:title" content="El Guy Tacos | Roswell, GA" />
-    <meta property="og:description" content="Late-night authentic birria tacos & esquites. Rated 4.7 stars." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+```
+<!-- Primary SEO -->
+<title>El Guy Tacos | Authentic Street Tacos in Roswell, GA</title>
+<meta name="description" content="Late-night authentic birria tacos & esquites in Roswell, GA. Open Tue–Sun, 6 PM to late. ⭐ 4.7 rating." />
+<meta name="author" content="El Guy Tacos" />
+<meta name="theme-color" content="#111111" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" />
+
+<!-- Open Graph (Facebook, Discord, iMessage, etc.) -->
+<meta property="og:title" content="El Guy Tacos 🌮 | Roswell, GA" />
+<meta property="og:description" content="Authentic birria tacos & esquites. Open late. ⭐ 4.7 rating." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://elguytacos.vercel.app/" />
+<meta property="og:image" content="https://elguytacos.vercel.app/og-image.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="El Guy Tacos 🌮 | Roswell, GA" />
+<meta name="twitter:description" content="Late-night tacos done right. Birria, esquites, and more." />
+<meta name="twitter:image" content="https://elguytacos.vercel.app/og-image.jpg" />
+
+<!-- Structured Data (SEO boost) -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "El Guy Tacos",
+    "image": "https://elguytacos.vercel.app/og-image.jpg",
+    "servesCuisine": "Mexican",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Roswell",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    },
+    "url": "https://elguytacos.vercel.app/"
+  }
+</script>
+```
+
   </head>
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+```
+<!-- Vite entry (this gets replaced with /assets/... in production build) -->
+<script type="module" src="/src/main.tsx"></script>
+```
+
   </body>
 </html>
