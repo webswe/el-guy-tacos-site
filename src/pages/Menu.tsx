@@ -30,7 +30,6 @@ const menu: MenuCategory[] = [
       { name: "Chicken Tacos", description: "Seasoned chicken, lettuce, pico de gallo & crema", price: "$3.50" },
       { name: "Chorizo Tacos", description: "Spicy Mexican sausage with onion & cilantro", price: "$3.50" },
 
-      // 🔥 Chalkboard additions
       { name: "Classic Street Tacos", description: "Simple tacos with your choice of meat, onion & cilantro", price: "$3.00" },
       { name: "Birria Tacos", description: "Slow-cooked beef tacos served with rich consommé", price: "$15.00", popular: true },
     ],
