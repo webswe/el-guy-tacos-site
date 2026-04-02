@@ -42,7 +42,6 @@ const menu: MenuCategory[] = [
       { name: "Mulita", description: "Two corn tortillas stuffed with meat, cheese & salsa", price: "$5.00" },
       { name: "Torta", description: "Mexican sandwich on telera bread with meat, beans, avocado & crema", price: "$9.00" },
 
-      // 🔥 Chalkboard additions
       { name: "Burrito", description: "Flour tortilla stuffed with meat, rice & beans", price: "$12.00" },
       { name: "Burrito Bowl", description: "All burrito fillings served in a bowl", price: "$12.00" },
       { name: "Chef Combo", description: "Chef’s special combo plate with a mix of favorites", price: "$12.00" },
@@ -56,7 +55,6 @@ const menu: MenuCategory[] = [
       { name: "Rice & Beans", description: "Mexican rice with refried beans", price: "$4.00" },
       { name: "Consommé Cup", description: "Rich birria broth served hot", price: "$3.00" },
 
-      // 🔥 Chalkboard additions
       { name: "Nachos", description: "Loaded nachos with cheese & toppings", price: "$12.00" },
       { name: "Chips & Queso", description: "Crispy chips with melted cheese dip", price: "$6.00" },
     ],
@@ -67,9 +65,7 @@ const menu: MenuCategory[] = [
       { name: "Horchata", description: "Sweet rice milk with cinnamon & vanilla", price: "$4.00", image: horchataImg },
       { name: "Jamaica", description: "Hibiscus iced tea, lightly sweetened", price: "$3.50" },
       { name: "Mexican Coke", description: "Glass bottle, real cane sugar", price: "$3.00" },
-      { name: "Churros", description: "Fried dough with cinnamon sugar & chocolate dipping sauce", price: "$5.00", image: churrosImg },
 
-      // 🔥 Chalkboard drink additions
       { name: "Sangria", description: "Sweet red wine punch", price: "$4.00" },
       { name: "Sidral Mundet", description: "Mexican apple soda", price: "$3.00" },
       { name: "Jarritos", description: "Assorted fruit-flavored sodas", price: "$3.00" },
@@ -77,7 +73,7 @@ const menu: MenuCategory[] = [
       { name: "Sprite", description: "Lemon-lime soda", price: "$2.50" },
       { name: "Coca-Cola", description: "Classic Coke", price: "$2.50" },
 
-      // 🔥 Chalkboard desserts
+      
       { name: "Tres Leches", description: "Moist sponge cake soaked in three milks", price: "$5.00" },
       { name: "Chocoflan", description: "Chocolate cake layered with flan", price: "$5.00" },
     ],
