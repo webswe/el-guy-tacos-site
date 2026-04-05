@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import birriaImg from "@/assets/birria.jpg";
-import esquitesImg from "@/assets/esquites.jpg";
-import pastorImg from "@/assets/tacos-pastor.jpg";
-import quesadillaImg from "@/assets/quesadilla.jpg";
-import horchataImg from "@/assets/horchata.jpg";
-import churrosImg from "@/assets/churros.jpg";
 
 interface MenuItem {
   name: string;
   description: string;
-  price: string;
-  image?: string;
+  price?: string;
   popular?: boolean;
 }
 
@@ -24,44 +17,93 @@ const menu: MenuCategory[] = [
   {
     title: "Tacos",
     items: [
-      { name: "Tacos", description: "Onions, cilantro & lime", price: "$3.00" },
-      { name: "Birria Tacos", description: "Onions & cilantro", price: "$16.00", popular: true },
+      {
+        name: "Street Tacos",
+        description: "Choice of steak, chicken, pork, chorizo · onions, cilantro & lime",
+        price: "$3.00",
+      },
+      {
+        name: "Birria Tacos",
+        description: "Slow-cooked beef with consommé · onions & cilantro",
+        price: "$16.00",
+        popular: true,
+      },
     ],
   },
   {
-    title: "Quesadillas & More",
+    title: "Mains",
     items: [
-      { name: "Tortas", description: "Mayonnaise, beans, cheese, lettuce, tomato, avocado & jalapeños", price: "$11.00" },
-      { name: "Burrito", description: "Beans, rice, cheese, lettuce, tomatoes, onions, sour cream & sauce", price: "$12.00" },
-      { name: "Burrito Bowl", description: "Rice, beans, lettuce, chips, cheese, tomatoes & onions", price: "$12.00" },
-      { name: "Quesadillas", description: "Lettuce, tomatoes, sour cream & sauce", price: "$12.00" },
-      { name: "Chef Combo", description: "3 tacos, rice & beans", price: "$12.00", popular: true },
-      { name: "Mega Nachos", description: "Chips, cheese, lettuce, tomatoes, onions, sour cream, jalapeños & cilantro", price: "$12.00" },
+      {
+        name: "Burrito",
+        description: "Choice of meat · rice, beans, cheese, lettuce, sour cream & sauce",
+        price: "$12.00",
+      },
+      {
+        name: "Burrito Bowl",
+        description: "Everything from a burrito, no tortilla",
+        price: "$12.00",
+      },
+      {
+        name: "Quesadilla",
+        description: "Grilled tortilla with cheese & choice of meat",
+        price: "$12.00",
+      },
+      {
+        name: "Torta",
+        description: "Mexican sandwich with meat, beans, avocado & jalapeños",
+        price: "$11.00",
+      },
+      {
+        name: "Chef Combo",
+        description: "3 tacos + rice & beans",
+        price: "$12.00",
+        popular: true,
+      },
+      {
+        name: "Mega Nachos",
+        description: "Loaded with meat, cheese, jalapeños & toppings",
+        price: "$12.00",
+      },
     ],
   },
   {
     title: "Sides",
     items: [
-      { name: "Chips & Cheese", description: "Crispy chips with melted cheese", price: "$6.00" },
-      { name: "Esquites", description: "Corn, mayonnaise, cotija cheese, cayenne pepper & lime", price: "$5.00", popular: true },
+      {
+        name: "Esquites",
+        description: "Street corn with cotija, chili, lime & crema",
+        price: "$5.00",
+        popular: true,
+      },
+      {
+        name: "Chips & Cheese",
+        description: "Crispy chips with warm cheese dip",
+        price: "$6.00",
+      },
     ],
   },
   {
-    title: "Meats",
+    title: "Drinks",
     items: [
-      { name: "Steak", description: "", price: "" },
-      { name: "Roasted Pork", description: "", price: "" },
-      { name: "Chicken", description: "", price: "" },
-      { name: "Mexican Sausage", description: "", price: "" },
-      { name: "Shredded Pork", description: "", price: "" },
-      { name: "Steak + Mexican Sausage Mix", description: "", price: "" },
+      {
+        name: "Mexican Sodas",
+        description: "Coke, Jarritos, Sidral, Fanta, Sangria",
+      },
     ],
   },
   {
-    title: "Drinks & Dessert",
+    title: "Desserts",
     items: [
-      { name: "Mexican Drinks", description: "Coke, Fanta, Jarritos, Sidral, Sangria", price: "" },
-      { name: "Desserts", description: "Tres leches cake, chocoflan", price: "$5.00" },
+      {
+        name: "Tres Leches",
+        description: "Moist cake soaked in three milks",
+        price: "$5.00",
+      },
+      {
+        name: "Chocoflan",
+        description: "Chocolate cake layered with flan",
+        price: "$5.00",
+      },
     ],
   },
 ];
@@ -74,60 +116,75 @@ const MenuPage = () => {
         <div className="max-w-5xl mx-auto">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 text-sm"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-6 text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to home
+            Back
           </Link>
-          <h1 className="font-display text-6xl md:text-8xl text-foreground">
+
+          <h1 className="font-display text-5xl md:text-7xl">
             OUR <span className="text-gradient">MENU</span>
           </h1>
-          <p className="text-muted-foreground mt-4 text-lg">
-            Authentic Mexican street food · Prices may vary
+
+          <p className="text-muted-foreground mt-3">
+            Authentic Mexican street food
           </p>
         </div>
       </div>
 
-      {/* Menu Categories */}
-      <div className="max-w-5xl mx-auto px-6 py-16 space-y-20">
+      {/* Sticky Category Nav */}
+      <div className="sticky top-0 z-10 bg-background/80 backdrop-blur border-b border-border">
+        <div className="max-w-5xl mx-auto px-6 py-3 flex gap-4 overflow-x-auto text-sm">
+          {menu.map((cat) => (
+            <a
+              key={cat.title}
+              href={`#${cat.title}`}
+              className="whitespace-nowrap text-muted-foreground hover:text-primary"
+            >
+              {cat.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Menu */}
+      <div className="max-w-5xl mx-auto px-6 py-12 space-y-16">
         {menu.map((category) => (
-          <section key={category.title}>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-10 flex items-center gap-4">
+          <section key={category.title} id={category.title}>
+            <h2 className="font-display text-3xl md:text-4xl mb-6">
               {category.title}
-              <span className="h-px flex-1 bg-border" />
             </h2>
 
-            <div className="space-y-6">
+            <div className="grid gap-4">
               {category.items.map((item) => (
                 <div
                   key={item.name}
-                  className="group flex gap-5 items-start p-4 -mx-4 rounded-xl hover:bg-card transition-colors duration-300"
+                  className={`p-5 rounded-xl border transition hover:shadow-md ${
+                    item.popular
+                      ? "border-primary/40 bg-primary/5"
+                      : "border-border"
+                  }`}
                 >
-                  {item.image && (
-                    <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-border">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        loading="lazy"
-                        width={80}
-                        height={80}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="text-foreground font-medium text-lg flex items-center gap-2">
+                  <div className="flex justify-between items-start gap-4">
+                    <div>
+                      <h3 className="font-medium text-lg flex items-center gap-2">
                         {item.name}
                         {item.popular && (
-                          <span className="bg-primary/15 text-primary text-xs font-bold px-2 py-0.5 rounded-full">
+                          <span className="text-xs bg-primary text-white px-2 py-0.5 rounded-full">
                             Popular
                           </span>
                         )}
                       </h3>
-                      <span className="text-primary font-display text-xl shrink-0">{item.price}</span>
+                      <p className="text-muted-foreground text-sm mt-1">
+                        {item.description}
+                      </p>
                     </div>
-                    <p className="text-muted-foreground text-sm mt-1">{item.description}</p>
+
+                    {item.price && (
+                      <span className="text-primary font-semibold text-lg">
+                        {item.price}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
@@ -137,8 +194,8 @@ const MenuPage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="py-8 px-6 text-center text-muted-foreground text-sm border-t border-border">
-        <p>© {new Date().getFullYear()} El Guy Tacos · Roswell, GA</p>
+      <footer className="py-8 text-center text-muted-foreground text-sm border-t border-border">
+        © {new Date().getFullYear()} El Guy Tacos · Roswell, GA
       </footer>
     </main>
   );
