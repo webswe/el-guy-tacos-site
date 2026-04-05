@@ -135,12 +135,6 @@ const menu: MenuCategory[] = [
         price: "$5.00",
         image: chocoflanImg,
       },
-      {
-        name: "Churros",
-        description: "Cinnamon sugar fried dough",
-        price: "$5.00",
-        image: churrosImg,
-      },
     ],
   },
 ];
