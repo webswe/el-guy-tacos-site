@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import birriaImg from "@/assets/birria.jpg";
-import esquitesImg from "@/assets/esquites.jpg";
-import pastorImg from "@/assets/tacos-pastor.jpg";
-import quesadillaImg from "@/assets/quesadilla.jpg";
-import horchataImg from "@/assets/horchata.jpg";
+import burritoImg from "@/assets/burrito.png";
+import chefsComboImg from "@/assets/chefs-combo.jpg";
+import chocoflanImg from "@/assets/chocoflan.jpg";
 import churrosImg from "@/assets/churros.jpg";
+import esquitesImg from "@/assets/esquites.jpg";
+import heroTacosImg from "@/assets/hero-tacos.jpg";
+import horchataImg from "@/assets/horchata.jpg";
+import quesadillaImg from "@/assets/quesadilla.jpg";
+import pastorImg from "@/assets/tacos-pastor.jpg";
+import tortaImg from "@/assets/torta.jpg";
+import tresLechesImg from "@/assets/tres-leches.jpg";
 
 interface MenuItem {
   name: string;
@@ -32,7 +38,7 @@ const menu: MenuCategory[] = [
         description: `${MEAT_LABEL} · onions & cilantro`,
         price: "3 for $11",
         popular: true,
-        image: pastorImg,
+        image: heroTacosImg,
       },
       {
         name: "Birria Tacos (3)",
@@ -49,6 +55,7 @@ const menu: MenuCategory[] = [
         name: "Burrito",
         description: `${MEAT_LABEL} · rice, beans, cheese`,
         price: "$12.00",
+        image: burritoImg,
       },
       {
         name: "Burrito Bowl",
@@ -65,12 +72,14 @@ const menu: MenuCategory[] = [
         name: "Torta",
         description: `${MEAT_LABEL} · beans, avocado, jalapeños`,
         price: "$11.00",
+        image: tortaImg,
       },
       {
         name: "Chef Combo",
         description: "3 tacos + rice & beans",
         price: "$12.00",
         popular: true,
+        image: chefsComboImg,
       },
       {
         name: "Mega Nachos",
@@ -118,11 +127,13 @@ const menu: MenuCategory[] = [
         name: "Tres Leches",
         description: "Classic milk cake",
         price: "$5.00",
+        image: tresLechesImg,
       },
       {
         name: "Chocoflan",
         description: "Chocolate cake + flan",
         price: "$5.00",
+        image: chocoflanImg,
       },
       {
         name: "Churros",
@@ -193,7 +204,6 @@ const MenuPage = () => {
                     item.popular ? "border-primary/40 bg-primary/5" : "border-border"
                   }`}
                 >
-                  {/* Show image if available */}
                   {item.image && (
                     <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0 border border-border">
                       <img
@@ -203,8 +213,6 @@ const MenuPage = () => {
                       />
                     </div>
                   )}
-
-                  {/* Info */}
                   <div className="flex-1">
                     <h3 className="font-medium text-lg flex items-center gap-2">
                       {item.name}
