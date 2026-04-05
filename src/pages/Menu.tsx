@@ -18,9 +18,10 @@ const menu: MenuCategory[] = [
     title: "Tacos",
     items: [
       {
-        name: "Street Tacos",
-        description: "Choice of steak, chicken, pork, chorizo · onions, cilantro & lime",
-        price: "$3.00",
+        name: "Street Tacos (3)",
+        description: "Mix & match any meats · onions, cilantro & lime",
+        price: "3 for $11",
+        popular: true
       },
       {
         name: "Birria Tacos",
