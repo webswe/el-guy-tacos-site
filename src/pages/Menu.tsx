@@ -13,7 +13,7 @@ interface MenuCategory {
   items: MenuItem[];
 }
 
-// 🔥 Clean reusable meat label
+// Reusable meat label
 const MEAT_LABEL = "Choice of steak, chicken, pork, chorizo";
 
 const menu: MenuCategory[] = [
@@ -133,7 +133,7 @@ const MenuPage = () => {
             Authentic Mexican street food
           </p>
 
-          {/* 🔥 Meat helper note */}
+          {/* Meat helper note */}
           <p className="text-xs text-muted-foreground mt-2">
             Meat options: steak · chicken · pork · chorizo
           </p>
@@ -188,10 +188,10 @@ const MenuPage = () => {
                         {item.description}
                       </p>
 
-                      {/* 🔥 Optional CTA (huge UX win) */}
+                      {/* Optional CTA 
                       <button className="mt-3 text-sm text-primary font-medium hover:underline">
                         Add to order →
-                      </button>
+                      </button>*/}
                     </div>
 
                     {item.price && (
