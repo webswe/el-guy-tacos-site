@@ -24,58 +24,44 @@ const menu: MenuCategory[] = [
   {
     title: "Tacos",
     items: [
-      { name: "Birria Tacos", description: "Slow-braised beef, crispy tortilla, melted cheese & consommé for dipping", price: "$4.50", image: birriaImg, popular: true },
-      { name: "Tacos Al Pastor", description: "Marinated pork, grilled pineapple, onion & cilantro", price: "$3.50", image: pastorImg, popular: true },
-      { name: "Carne Asada Tacos", description: "Grilled steak, onion, cilantro & salsa verde", price: "$4.00" },
-      { name: "Chicken Tacos", description: "Seasoned chicken, lettuce, pico de gallo & crema", price: "$3.50" },
-      { name: "Chorizo Tacos", description: "Spicy Mexican sausage with onion & cilantro", price: "$3.50" },
-
-      { name: "Classic Street Tacos", description: "Simple tacos with your choice of meat, onion & cilantro", price: "$3.00" },
-      { name: "Birria Tacos", description: "Slow-cooked beef tacos served with rich consommé", price: "$15.00", popular: true },
+      { name: "Tacos", description: "Onions, cilantro & lime", price: "$3.00" },
+      { name: "Birria Tacos", description: "Onions & cilantro", price: "$16.00", popular: true },
     ],
   },
   {
     title: "Quesadillas & More",
     items: [
-      { name: "Quesadilla", description: "Large flour tortilla with melted cheese & your choice of meat", price: "$8.00", image: quesadillaImg },
-      { name: "Birria Quesadilla", description: "Loaded with birria, cheese & served with consommé", price: "$10.00", popular: true },
-      { name: "Mulita", description: "Two corn tortillas stuffed with meat, cheese & salsa", price: "$5.00" },
-      { name: "Torta", description: "Mexican sandwich on telera bread with meat, beans, avocado & crema", price: "$9.00" },
-
-      { name: "Burrito", description: "Flour tortilla stuffed with meat, rice & beans", price: "$12.00" },
-      { name: "Burrito Bowl", description: "All burrito fillings served in a bowl", price: "$12.00" },
-      { name: "Chef Combo", description: "Chef’s special combo plate with a mix of favorites", price: "$12.00" },
+      { name: "Tortas", description: "Mayonnaise, beans, cheese, lettuce, tomato, avocado & jalapeños", price: "$11.00" },
+      { name: "Burrito", description: "Beans, rice, cheese, lettuce, tomatoes, onions, sour cream & sauce", price: "$12.00" },
+      { name: "Burrito Bowl", description: "Rice, beans, lettuce, chips, cheese, tomatoes & onions", price: "$12.00" },
+      { name: "Quesadillas", description: "Lettuce, tomatoes, sour cream & sauce", price: "$12.00" },
+      { name: "Chef Combo", description: "3 tacos, rice & beans", price: "$12.00", popular: true },
+      { name: "Mega Nachos", description: "Chips, cheese, lettuce, tomatoes, onions, sour cream, jalapeños & cilantro", price: "$12.00" },
     ],
   },
   {
     title: "Sides",
     items: [
-      { name: "Esquites", description: "Roasted corn off the cob with cotija, chili, lime & crema", price: "$5.00", image: esquitesImg, popular: true },
-      { name: "Chips & Salsa", description: "Fresh tortilla chips with house-made red & green salsa", price: "$4.00" },
-      { name: "Rice & Beans", description: "Mexican rice with refried beans", price: "$4.00" },
-      { name: "Consommé Cup", description: "Rich birria broth served hot", price: "$3.00" },
-
-      { name: "Nachos", description: "Loaded nachos with cheese & toppings", price: "$12.00" },
-      { name: "Chips & Queso", description: "Crispy chips with melted cheese dip", price: "$6.00" },
+      { name: "Chips & Cheese", description: "Crispy chips with melted cheese", price: "$6.00" },
+      { name: "Esquites", description: "Corn, mayonnaise, cotija cheese, cayenne pepper & lime", price: "$5.00", popular: true },
+    ],
+  },
+  {
+    title: "Meats",
+    items: [
+      { name: "Steak", description: "", price: "" },
+      { name: "Roasted Pork", description: "", price: "" },
+      { name: "Chicken", description: "", price: "" },
+      { name: "Mexican Sausage", description: "", price: "" },
+      { name: "Shredded Pork", description: "", price: "" },
+      { name: "Steak + Mexican Sausage Mix", description: "", price: "" },
     ],
   },
   {
     title: "Drinks & Dessert",
     items: [
-      { name: "Horchata", description: "Sweet rice milk with cinnamon & vanilla", price: "$4.00", image: horchataImg },
-      { name: "Jamaica", description: "Hibiscus iced tea, lightly sweetened", price: "$3.50" },
-      { name: "Mexican Coke", description: "Glass bottle, real cane sugar", price: "$3.00" },
-
-      { name: "Sangria", description: "Sweet red wine punch", price: "$4.00" },
-      { name: "Sidral Mundet", description: "Mexican apple soda", price: "$3.00" },
-      { name: "Jarritos", description: "Assorted fruit-flavored sodas", price: "$3.00" },
-      { name: "Fanta", description: "Orange soda", price: "$2.50" },
-      { name: "Sprite", description: "Lemon-lime soda", price: "$2.50" },
-      { name: "Coca-Cola", description: "Classic Coke", price: "$2.50" },
-
-      
-      { name: "Tres Leches", description: "Moist sponge cake soaked in three milks", price: "$5.00" },
-      { name: "Chocoflan", description: "Chocolate cake layered with flan", price: "$5.00" },
+      { name: "Mexican Drinks", description: "Coke, Fanta, Jarritos, Sidral, Sangria", price: "" },
+      { name: "Desserts", description: "Tres leches cake, chocoflan", price: "$5.00" },
     ],
   },
 ];
