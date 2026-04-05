@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import birriaImg from "@/assets/birria.jpg";
+import esquitesImg from "@/assets/esquites.jpg";
+import pastorImg from "@/assets/tacos-pastor.jpg";
+import quesadillaImg from "@/assets/quesadilla.jpg";
+import horchataImg from "@/assets/horchata.jpg";
+import churrosImg from "@/assets/churros.jpg";
 
 interface MenuItem {
   name: string;
   description: string;
   price?: string;
   popular?: boolean;
+  image?: string;
 }
 
 interface MenuCategory {
@@ -25,11 +32,13 @@ const menu: MenuCategory[] = [
         description: `${MEAT_LABEL} · onions & cilantro`,
         price: "3 for $11",
         popular: true,
+        image: pastorImg,
       },
       {
         name: "Birria Tacos (3)",
         description: "Slow-cooked beef · served with consommé",
         price: "$16.00",
+        image: birriaImg,
       },
     ],
   },
@@ -50,6 +59,7 @@ const menu: MenuCategory[] = [
         name: "Quesadilla",
         description: `${MEAT_LABEL} · melted cheese`,
         price: "$12.00",
+        image: quesadillaImg,
       },
       {
         name: "Torta",
@@ -77,6 +87,7 @@ const menu: MenuCategory[] = [
         description: "Street corn with cotija & lime",
         price: "$5.00",
         popular: true,
+        image: esquitesImg,
       },
       {
         name: "Chips & Cheese",
@@ -88,6 +99,12 @@ const menu: MenuCategory[] = [
   {
     title: "Drinks",
     items: [
+      {
+        name: "Horchata",
+        description: "Classic Mexican rice drink",
+        price: "$4.00",
+        image: horchataImg,
+      },
       {
         name: "Mexican Sodas",
         description: "Jarritos, Coke, Fanta, Sidral, Sangria",
@@ -106,6 +123,12 @@ const menu: MenuCategory[] = [
         name: "Chocoflan",
         description: "Chocolate cake + flan",
         price: "$5.00",
+      },
+      {
+        name: "Churros",
+        description: "Cinnamon sugar fried dough",
+        price: "$5.00",
+        image: churrosImg,
       },
     ],
   },
@@ -133,7 +156,6 @@ const MenuPage = () => {
             Authentic Mexican street food
           </p>
 
-          {/* Meat helper note */}
           <p className="text-xs text-muted-foreground mt-2">
             Meat options: steak · chicken · pork · chorizo
           </p>
@@ -167,35 +189,34 @@ const MenuPage = () => {
               {category.items.map((item) => (
                 <div
                   key={item.name}
-                  className={`p-5 rounded-xl border transition hover:shadow-md ${
-                    item.popular
-                      ? "border-primary/40 bg-primary/5"
-                      : "border-border"
+                  className={`p-5 rounded-xl border transition hover:shadow-md flex gap-4 ${
+                    item.popular ? "border-primary/40 bg-primary/5" : "border-border"
                   }`}
                 >
-                  <div className="flex justify-between items-start gap-4">
-                    <div>
-                      <h3 className="font-medium text-lg flex items-center gap-2">
-                        {item.name}
-                        {item.popular && (
-                          <span className="text-xs bg-primary text-white px-2 py-0.5 rounded-full">
-                            Popular
-                          </span>
-                        )}
-                      </h3>
-
-                      <p className="text-muted-foreground text-sm mt-1">
-                        {item.description}
-                      </p>
-
-                      {/* Optional CTA 
-                      <button className="mt-3 text-sm text-primary font-medium hover:underline">
-                        Add to order →
-                      </button>*/}
+                  {/* Show image if available */}
+                  {item.image && (
+                    <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0 border border-border">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover transition-transform duration-500"
+                      />
                     </div>
+                  )}
 
+                  {/* Info */}
+                  <div className="flex-1">
+                    <h3 className="font-medium text-lg flex items-center gap-2">
+                      {item.name}
+                      {item.popular && (
+                        <span className="text-xs bg-primary text-white px-2 py-0.5 rounded-full">
+                          Popular
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mt-1">{item.description}</p>
                     {item.price && (
-                      <span className="text-primary font-semibold text-lg whitespace-nowrap">
+                      <span className="text-primary font-semibold text-lg mt-2 block">
                         {item.price}
                       </span>
                     )}
