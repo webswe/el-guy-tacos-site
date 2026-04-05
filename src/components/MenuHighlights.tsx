@@ -1,6 +1,6 @@
 import birriaImg from "@/assets/birria.jpg";
 import esquitesImg from "@/assets/esquites.jpg";
-import pastorImg from "@/assets/tacos-pastor.jpg";
+import tacosImg from "@/assets/tacos.jpg";
 import { Link } from "react-router-dom";
 import { ArrowRight, Flame } from "lucide-react";
 
@@ -12,9 +12,9 @@ const items = [
     tag: "Most Popular",
   },
   {
-    name: "Tacos Al Pastor",
-    description: "Marinated pork with grilled pineapple, onion & cilantro on fresh corn tortilla",
-    image: pastorImg,
+    name: "Tacos",
+    description: "",
+    image: tacosImg,
     tag: "Staff Pick",
   },
   {
