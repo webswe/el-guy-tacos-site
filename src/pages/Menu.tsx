@@ -13,21 +13,23 @@ interface MenuCategory {
   items: MenuItem[];
 }
 
+// 🔥 Clean reusable meat label
+const MEAT_LABEL = "Choice of steak, chicken, pork, chorizo";
+
 const menu: MenuCategory[] = [
   {
     title: "Tacos",
     items: [
       {
         name: "Street Tacos (3)",
-        description: "Mix & match any meats · onions, cilantro & lime",
+        description: `${MEAT_LABEL} · onions & cilantro`,
         price: "3 for $11",
-        popular: true
+        popular: true,
       },
       {
-        name: "Birria Tacos",
-        description: "Slow-cooked beef with consommé · onions & cilantro",
+        name: "Birria Tacos (3)",
+        description: "Slow-cooked beef · served with consommé",
         price: "$16.00",
-        popular: true,
       },
     ],
   },
@@ -36,22 +38,22 @@ const menu: MenuCategory[] = [
     items: [
       {
         name: "Burrito",
-        description: "Choice of meat · rice, beans, cheese, lettuce, sour cream & sauce",
+        description: `${MEAT_LABEL} · rice, beans, cheese`,
         price: "$12.00",
       },
       {
         name: "Burrito Bowl",
-        description: "Everything from a burrito, no tortilla",
+        description: `${MEAT_LABEL} · no tortilla`,
         price: "$12.00",
       },
       {
         name: "Quesadilla",
-        description: "Grilled tortilla with cheese & choice of meat",
+        description: `${MEAT_LABEL} · melted cheese`,
         price: "$12.00",
       },
       {
         name: "Torta",
-        description: "Mexican sandwich with meat, beans, avocado & jalapeños",
+        description: `${MEAT_LABEL} · beans, avocado, jalapeños`,
         price: "$11.00",
       },
       {
@@ -62,7 +64,7 @@ const menu: MenuCategory[] = [
       },
       {
         name: "Mega Nachos",
-        description: "Loaded with meat, cheese, jalapeños & toppings",
+        description: `${MEAT_LABEL} · loaded with toppings`,
         price: "$12.00",
       },
     ],
@@ -72,13 +74,13 @@ const menu: MenuCategory[] = [
     items: [
       {
         name: "Esquites",
-        description: "Street corn with cotija, chili, lime & crema",
+        description: "Street corn with cotija & lime",
         price: "$5.00",
         popular: true,
       },
       {
         name: "Chips & Cheese",
-        description: "Crispy chips with warm cheese dip",
+        description: "Crispy chips with queso",
         price: "$6.00",
       },
     ],
@@ -88,7 +90,7 @@ const menu: MenuCategory[] = [
     items: [
       {
         name: "Mexican Sodas",
-        description: "Coke, Jarritos, Sidral, Fanta, Sangria",
+        description: "Jarritos, Coke, Fanta, Sidral, Sangria",
       },
     ],
   },
@@ -97,12 +99,12 @@ const menu: MenuCategory[] = [
     items: [
       {
         name: "Tres Leches",
-        description: "Moist cake soaked in three milks",
+        description: "Classic milk cake",
         price: "$5.00",
       },
       {
         name: "Chocoflan",
-        description: "Chocolate cake layered with flan",
+        description: "Chocolate cake + flan",
         price: "$5.00",
       },
     ],
@@ -129,6 +131,11 @@ const MenuPage = () => {
 
           <p className="text-muted-foreground mt-3">
             Authentic Mexican street food
+          </p>
+
+          {/* 🔥 Meat helper note */}
+          <p className="text-xs text-muted-foreground mt-2">
+            Meat options: steak · chicken · pork · chorizo
           </p>
         </div>
       </div>
@@ -176,13 +183,19 @@ const MenuPage = () => {
                           </span>
                         )}
                       </h3>
+
                       <p className="text-muted-foreground text-sm mt-1">
                         {item.description}
                       </p>
+
+                      {/* 🔥 Optional CTA (huge UX win) */}
+                      <button className="mt-3 text-sm text-primary font-medium hover:underline">
+                        Add to order →
+                      </button>
                     </div>
 
                     {item.price && (
-                      <span className="text-primary font-semibold text-lg">
+                      <span className="text-primary font-semibold text-lg whitespace-nowrap">
                         {item.price}
                       </span>
                     )}
